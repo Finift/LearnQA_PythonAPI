@@ -26,7 +26,7 @@ class TestAgent:
     def test_user_agents(self):
         url = 'https://playground.learnqa.ru/ajax/api/user_agent_check'
         for key, value in dictionary.items():
-            response = requests.get(url, headers={'user_agent': key[3]})
+            response = requests.get(url, headers={'user_agent': key})
             assert response.json()['platform'] == value['platform'], 'Platform wrong'
             assert response.json()['browser'] == value['browser'], 'browser wrong'
             assert response.json()['device'] == value['device'], 'device wrong'
